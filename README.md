@@ -27,6 +27,7 @@
  componentDidUpdate（每次调用render方法之后会调用componentDidUpdate方法，该方法可以访问新的dom元素）
  详细请看 immutable -> app -> pages -> index -> react.js（及访问对应的页面 react.html）
  代码如下：
+ 
     let App2 = React.createClass({
 
       componentWillReceiveProps: function(nextProps){
