@@ -268,7 +268,7 @@ mmutable Data(不可变数据)的思想就是，不存在指向同一地址的�
 #### 我们执行后，确实原有的数据已经不可变了，又新生成了一个新的不可变数据，不用再担心引用类型数据的变化，因为一切数据都被你把控了。
 我们是否也可以每一次操作数据时都deepClone一下，也可以达到这种效果呀，这里的实现有什么不一样吗？deepClone是通过递归对象进行数据的拷贝，而Immutable数据的实现则是仅仅拷贝父节点，而其他不受影响的数据节点都是共享的用同一份数据，以大大提升性能。我们需要做的仅仅是将原生的数据转化成Immutable数据。
 可以看如下图演示一下：
-#### <img src="https://raw.githubusercontent.com/tugenhua0707/immutable-react/master/change.gif"/>
+![image](https://raw.githubusercontent.com/tugenhua0707/immutable-react/master/change.gif)
 ### 当我们在shouldComponentUpdate里判断是否更新时，变化的数据是新的引用，而不变的数据是原来的引用，这样我们就可以非常轻松的判断新旧数据的差异，从而大大提升性能。我们该如何使用到我们的实际项目中呢？其实很简单的，就是数据初始化时，就让它变成Immutable数据.
 #### 具体可以看 immutable-react -> app -> html -> immutable.html 演示效果
 #### JS代码如下：
